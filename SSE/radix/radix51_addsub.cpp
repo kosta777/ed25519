@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <iostream>
+#include <iomanip>
+
+#include "radix51_addsub.h"
+
+/* z = x + y */
+void _r51_add(const limb_t* x, const limb_t* y, limb_t* z){
+  // add limbs
+  /*
+  z[0] = x[0] + y[0];
+  z[1] = x[1] + y[1];
+  z[2] = x[2] + y[2];
+  z[3] = x[3] + y[3];
+  z[4] = x[4] + y[4];
+  //*/
+  
+  ///*
+  __m256i _x0123 = _mm256_loadu_si256((__m256i const *)&x[0]);
+  __m256i _y0123 = _mm256_loadu_si256((__m256i const *)&y[0]);
+  __m256i _z0123 = _mm256_add_epi64(_x0123, _y0123);
+  _mm256_storeu_si256((__m256i *)&z[0], _z0123);
+  z[4] = x[4] + y[4];
+  //*/
+
+  // carry over and normalize
+  // _carry_and_normalize(z);
+}
+
+void _r51_sub(const limb_t* x, const limb_t* y, limb_t* z){
+  /*
+  z[0] = (x[0] + 0xFFFFFFFFFFFFE) - y[0];
+  z[1] = (x[1] + 0xFFFFFFFFFFFFE) - y[1];
+  z[2] = (x[2] + 0xFFFFFFFFFFFFE) - y[2];
+  z[3] = (x[3] + 0xFFFFFFFFFFFFE) - y[3];
+  z[4] = (x[4] + 0xFFFFFFFFFFFDA) - y[4];
+  //*/
+  
+  __m256i _max = _mm256_set_epi64x(0xFFFFFFFFFFFFE, 0xFFFFFFFFFFFFE, 0xFFFFFFFFFFFFE, 0xFFFFFFFFFFFFE);
+  __m256i _x0123 = _mm256_loadu_si256((__m256i const *)&x[0]);
+  __m256i _xpmax = _mm256_add_epi64(_x0123, _max);
+  __m256i _y0123 = _mm256_loadu_si256((__m256i const *)&y[0]);
+  __m256i _z0123 = _mm256_sub_epi64(_xpmax, _y0123);
+  _mm256_storeu_si256((__m256i *)&z[0], _z0123);
+  z[4] = (x[4] + 0xFFFFFFFFFFFDA) - y[4];
+  
+  // _carry_and_normalize(z);
+}
+
+void _r51_neg(const limb_t* x, limb_t* z){
+  /*
+  z[0] = 0x0007ffffffffffff - x[0];
+  z[1] = 0x0007ffffffffffff - x[1];
+  z[2] = 0x0007ffffffffffff - x[2];
+  z[3] = 0x0007ffffffffffff - x[3];
+  z[4] = 0x0007ffffffffffed - x[4];
+  //*/
+  
+  __m256i _max = _mm256_set_epi64x(0x0007ffffffffffff, 0x0007ffffffffffff, 0x0007ffffffffffff, 0x0007ffffffffffff);
+  __m256i _x0123 = _mm256_loadu_si256((__m256i const *)&x[0]);
+  __m256i _z0123 = _mm256_sub_epi64(_x0123, _max);
+  _mm256_storeu_si256((__m256i *)&z[0], _z0123);
+  z[4] = 0x0007ffffffffffed - x[4];
+  
+
+  _carry_and_normalize(z);
+}

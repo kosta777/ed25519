@@ -1,0 +1,168 @@
+-----------------------------
+StdC O0 r51
+NUM_INPUTS: 4
+NUM_VECTORS: 1
+name;cycles;ops/cycle
+multiplication;996.51;0.12
+squaring;660.62;0.13
+inverse;162792.39;0.15
+scalar_mult;171077796.00;0.14
+v_mul;4013.83;0.12
+v_sqr;2650.71;0.13
+v_inv;651188.26;0.15
+v_scalar_mult;684282776.00;0.14
+public key (10 inputs);1710314528.00;0.00
+-----------------------------
+StdC ntv r51
+NUM_INPUTS: 4
+NUM_VECTORS: 1
+name;cycles;ops/cycle
+multiplication;124.10;0.93
+squaring;95.16;0.94
+inverse;14855.06;1.61
+scalar_mult;15754918.67;1.57
+v_mul;481.96;0.96
+v_sqr;373.63;0.95
+v_inv;59492.95;1.61
+v_scalar_mult;63019598.00;1.57
+public key (10 inputs);157714786.00;0.00
+-----------------------------
+StdC O3 r51
+NUM_INPUTS: 4
+NUM_VECTORS: 1
+name;cycles;ops/cycle
+multiplication;123.32;0.94
+squaring;95.17;0.94
+inverse;14934.24;1.60
+scalar_mult;15835941.00;1.56
+v_mul;481.99;0.96
+v_sqr;373.69;0.95
+v_inv;59777.39;1.60
+v_scalar_mult;63338774.00;1.56
+public key (10 inputs);158528128.00;0.00
+-----------------------------
+SSE O0 r51
+NUM_INPUTS: 4
+NUM_VECTORS: 1
+name;cycles;ops/cycle
+multiplication;1031.53;0.11
+squaring;704.64;0.13
+inverse;170683.14;0.14
+scalar_mult;179269158.00;0.14
+v_mul;3897.05;0.12
+v_sqr;2565.95;0.14
+v_inv;682941.14;0.14
+v_scalar_mult;717083794.00;0.14
+public key (10 inputs);1792643600.00;0.00
+-----------------------------
+SSE ntv r51
+NUM_INPUTS: 4
+NUM_VECTORS: 1
+name;cycles;ops/cycle
+multiplication;120.47;0.96
+squaring;93.22;0.95
+inverse;17545.37;1.36
+scalar_mult;18524958.00;1.33
+v_mul;405.12;1.15
+v_sqr;310.63;1.15
+v_inv;70127.72;1.36
+v_scalar_mult;74100766.00;1.33
+public key (10 inputs);185355210.00;0.00
+-----------------------------
+SSE O3 r51
+NUM_INPUTS: 4
+NUM_VECTORS: 1
+name;cycles;ops/cycle
+multiplication;120.46;0.96
+squaring;93.22;0.95
+inverse;17559.92;1.36
+scalar_mult;18536179.60;1.33
+v_mul;418.32;1.11
+v_sqr;323.31;1.10
+v_inv;70195.37;1.36
+v_scalar_mult;74143868.00;1.33
+public key (10 inputs);185434150.00;0.00
+-----------------------------
+StdC O0 r25
+NUM_INPUTS: 4
+NUM_VECTORS: 1
+name;cycles;ops/cycle
+multiplication;361.72;0.67
+squaring;311.41;0.50
+inverse;61479.14;0.69
+scalar_mult;64694098.00;0.69
+v_mul;1488.06;0.65
+v_sqr;1289.18;0.48
+v_inv;245871.95;0.69
+v_scalar_mult;258754524.00;0.69
+public key (10 inputs);647757212.00;0.00
+-----------------------------
+StdC ntv r25
+NUM_INPUTS: 4
+NUM_VECTORS: 1
+name;cycles;ops/cycle
+multiplication;176.10;1.37
+squaring;132.58;1.18
+inverse;25092.85;1.68
+scalar_mult;26434734.00;1.68
+v_mul;721.16;1.34
+v_sqr;542.25;1.15
+v_inv;100370.96;1.68
+v_scalar_mult;105725798.00;1.68
+public key (10 inputs);264473428.00;0.00
+-----------------------------
+StdC O3 r25
+NUM_INPUTS: 4
+NUM_VECTORS: 1
+name;cycles;ops/cycle
+multiplication;176.13;1.37
+squaring;132.53;1.18
+inverse;25085.05;1.69
+scalar_mult;26433582.67;1.68
+v_mul;721.01;1.34
+v_sqr;542.56;1.15
+v_inv;100391.06;1.68
+v_scalar_mult;105732270.00;1.68
+public key (10 inputs);264496466.00;0.00
+-----------------------------
+SSE O0 r25
+NUM_INPUTS: 4
+NUM_VECTORS: 1
+name;cycles;ops/cycle
+multiplication;1012.54;0.24
+squaring;620.06;0.25
+inverse;145711.39;0.29
+scalar_mult;153735558.00;0.29
+v_mul;1042.34;0.92
+v_sqr;748.72;0.83
+v_inv;195858.71;0.86
+v_scalar_mult;205799816.00;0.86
+public key (10 inputs);719567520.00;0.00
+-----------------------------
+SSE ntv r25
+NUM_INPUTS: 4
+NUM_VECTORS: 1
+name;cycles;ops/cycle
+multiplication;170.33;1.41
+squaring;152.86;1.02
+inverse;30894.48;1.37
+scalar_mult;32395786.00;1.37
+v_mul;181.45;5.31
+v_sqr;85.33;7.31
+v_inv;21092.94;8.02
+v_scalar_mult;22363321.00;7.95
+public key (10 inputs);110065400.00;0.00
+-----------------------------
+SSE O3 r25
+NUM_INPUTS: 4
+NUM_VECTORS: 1
+name;cycles;ops/cycle
+multiplication;176.25;1.37
+squaring;157.44;0.99
+inverse;30910.98;1.37
+scalar_mult;32399326.00;1.37
+v_mul;184.94;5.21
+v_sqr;92.24;6.76
+v_inv;21481.92;7.87
+v_scalar_mult;22428940.00;7.93
+public key (10 inputs);109773398.00;0.00
